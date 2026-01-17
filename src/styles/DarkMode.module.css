@@ -1,3 +1,18 @@
-/* TODO: Define styles for dark mode */
+.light {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
 
-/* TODO: Ensure text and background colors adjust for dark mode */
+.dark {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.Button {
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}

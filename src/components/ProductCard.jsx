@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from '../styles/ProductCard.module.css'
+import { toBeDisabled } from '@testing-library/jest-dom/matchers'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product,addToCart }) => {
   return (
     <div
       className={`${styles.card} ${!product.inStock ? styles.outOfStock : ''}`}
@@ -10,8 +11,7 @@ const ProductCard = ({ product }) => {
       <p>Price: {product.price}</p>
       <p>Status: {product.inStock ? 'In Stock' : 'Out of Stock'}</p>
 
-      {/* TODO: Implement Add to Cart button functionality */}
-      <button>Add to Cart</button>
+      <button data-testid={'product-' + product.id} onClick={()=>addToCart(product) } disabled={!product.inStock}>Add to Cart</button>
     </div>
   )
 }
